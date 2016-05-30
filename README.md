@@ -11,3 +11,5 @@ Indien de gebruiker naar een detailpagina gaat van een artikel, krijgt hij naast
 
 ##Reserveren
 De klant heeft de kans om kleren te reserveren. Op deze manier kan de klant zeker zijn dat het product nog aanwezig in de winkel wanneer hij of zij daarheen reist. 
+
+Ook maakt dit het voor de klant sneller om zijn of haar artikelen te gaan halen in de winkelstraat.
