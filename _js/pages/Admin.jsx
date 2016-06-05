@@ -2,14 +2,14 @@
 
 import React, {Component} from 'react';
 import {selectAll} from '../api/users';
-import {Users, AdminNavigation} from '../components/admin/'
+import {Users, AdminNavigation} from '../components/admin/';
 
 export default class Admin extends Component{
   constructor(props, context){
     super(props, context);
 
     this.state = {
-      users:[]
+      users: []
     };
   }
   componentDidMount(){

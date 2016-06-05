@@ -8,7 +8,7 @@ use Lcobucci\JWT\Signer\Hmac\Sha256;
 class Token {
 
   private $token;
-  private $secret = '81O917698sdqfsqdfqesoudhiueh';
+  private $secret = '81O91769sdfdf8sdqfsqdfqesoudhiueh';
 
   public function setFromRequest($request){
     $s = $request->getHeader('x-auth-token');

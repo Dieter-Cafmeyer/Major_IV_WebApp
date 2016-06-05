@@ -28,30 +28,33 @@ export default class Navigation extends Component{
     return <Link className={this.setActive('admin')} to="/admin"><li className="navigation-item">Admin</li></Link>;
   }
 
-
   renderLoggedInLink(){
+    var user = token.content().user;
+
     if(token.content()){
       return (
         <ul className="navigation-content">
-          <Link className="navigation-item" to="/home"><li><p>Home</p></li></Link>
-          <Link className="navigation-item" to="/test"><li>Winkels</li></Link>
-          <Link className="navigation-item" to="/test"><li>Mijn Producten</li></Link>
+          <div className="profile-info">
+            <div className="profile-picture"></div>
+            <h2 className="profile-name">{user.username}</h2>
+            <h2 className="profile-points"><span>{user.points}</span> punten</h2>
+          </div>
+          <Link className="navigation-item" id="homeNav" to="/home"><li><p>Home</p></li></Link>
+          <Link className="navigation-item kaartNav" to="/kaart"><li>Kaart</li></Link>
           {this.renderAdminLink()}
-          <Link className="navigation-item" to="/test"><li>Account</li></Link>
-          <Link className="navigation-item" to="/logout"><li>Logout</li></Link>
-        </ul>
-      );
-    }else {
-      return (
-        <ul className="nav nav-pills">
-          <li className={this.setActive('login')}><Link to="/login">Login</Link></li>
-          <li className={this.setActive('register')}><Link to="/register">Register</Link></li>
         </ul>
       );
     }
   }
 
   render(){
+
+
+
+    if(this.props.isOpen){
+      console.log('open');
+    }
+
     return (
       <nav>
         {this.renderLoggedInLink()}

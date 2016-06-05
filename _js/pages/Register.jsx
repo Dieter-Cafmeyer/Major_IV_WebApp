@@ -90,12 +90,15 @@ export default class Register extends Component {
     return (
       <section className="register">
 
-        <form className="register-form" action="" method="post"
-          acceptCharset="utf-8"
-          onSubmit={e => this.submitHandler(e)}>
-        <header>
-          <h2>Registreer</h2>
-        </header>
+        <form className="register-form" action="" method="post" acceptCharset="utf-8" onSubmit={e => this.submitHandler(e)}>
+
+          <ul className="tab-group">
+            <li className="tab active"><p>Sign Up</p></li>
+            <Link to="/login"><li className="tab"><p>Log In</p></li></Link>
+          </ul>
+
+          <h2>Begin hier!</h2>
+
           <fieldset>
             <label>Gebruiker</label>
             <input type="text" name="username"
@@ -115,9 +118,10 @@ export default class Register extends Component {
               value={password}
               onChange={() => this.changeHandler()}
               className={errors.password ? 'error' : ''}/>
+              <br/>
             <button type="submit" className="btn">Registreer</button>
           </fieldset>
-          <h3><Link to="/login">Hebt u al een account?</Link></h3>
+
         </form>
 
       </section>

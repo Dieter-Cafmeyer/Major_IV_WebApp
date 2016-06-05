@@ -14,6 +14,7 @@ $app = new App(['settings' => ['displayErrorDetails' => true]]);
 
 require_once 'routes/auth.php';
 require_once 'routes/users.php';
+require_once 'routes/stores.php';
 
 $app->get('/{anything:.*}', function ($request, $response, $args) {
   $view = new \Slim\Views\PhpRenderer('view/');

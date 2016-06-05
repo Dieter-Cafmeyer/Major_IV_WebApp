@@ -1,5 +1,87 @@
+@media only screen and (max-width: 1200px){
+  .home {
+    padding: 3%;
+  }
+
+  .home-pt1 {
+    flex-wrap: wrap;
+  }
+
+  .info {
+    h1 {
+      width: 95%;
+    }
+    p {
+      width: 95%;
+    }
+  }
+
+  .beoordeling-btns {
+    height: 100px;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+
+    div {
+      width: 75%;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .beoordeling-btn {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 900px){
+  .info {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .beoordeling {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 30%;
+  }
+
+}
+
+@media only screen and (max-width: 700px){
+  .beoordeling {
+    width: 45%;
+  }
+
+  .shop-item {
+    margin-bottom: 20px;
+    width: 48%;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .info {
+    h1 {
+      font-size: 1.8em;
+    }
+    p {
+      font-size: 1em;
+    }
+  }
+}
+
 @media only screen and (max-width: 500px){
   .bm-menu-wrap {
     width: 100% !important;
+  }
+
+  .beoordeling {
+    width: 100%;
+    height: auto;
+  }
+
+  .shop-item {
+    width: 100%;
   }
 }

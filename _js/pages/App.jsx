@@ -12,6 +12,7 @@ export default class App extends Component {
   constructor(props, context){
     super(props, context);
   }
+
   renderNavigation(){
     let {pathname} = this.props.location;
 
@@ -22,10 +23,21 @@ export default class App extends Component {
     let isOpen = false;
 
     return (
-      <Menu width={250} isOpen={isOpen} >
+      <Menu width={350} isOpen={isOpen} onStateChange={this.isMenuOpen} customBurgerIcon={ <img className="burgerMenuLogo" src="../../assets/svg/closed.svg"/> }>
         <Navigation role={parseInt(role)} pathname={pathname} />
       </Menu>
     );
+  }
+
+  isMenuOpen(state){
+    var burgerMenuLogo = document.querySelector('.bm-icon');
+
+    if(state.isOpen){
+      burgerMenuLogo.setAttribute('src', '../../assets/svg/opened.svg');
+
+    }else {
+      burgerMenuLogo.setAttribute('src', '../../assets/svg/closed.svg');
+    }
   }
 
   render() {

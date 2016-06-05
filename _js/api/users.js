@@ -19,7 +19,7 @@ export const insert = data => {
 
 export const selectAll = () => {
 
-  let headers = new Headers({'x-auth-token': token.get()})
+  let headers = new Headers({'x-auth-token': token.get()});
 
   return fetch(base, {headers})
     .then(checkStatus);

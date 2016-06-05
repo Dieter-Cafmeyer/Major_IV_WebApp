@@ -44,7 +44,7 @@ export default class Login extends Component {
     let error = '';
 
     if(!email || !password){
-      error = 'invalid email / password combination';
+      error = 'verkeerde email / paswoord';
     }
 
     return error;
@@ -78,26 +78,26 @@ export default class Login extends Component {
 
     return (
       <section className="login">
+        <form className="login-form" action="" method="post" acceptCharset="utf-8" onSubmit={e => this.submitHandler(e)}>
 
-        <form className="login-form" action="" method="post"
-          acceptCharset="utf-8"
-          onSubmit={e => this.submitHandler(e)}>
+          <ul className="tab-group">
+            <Link to="/register"><li className="tab"><p>Sign Up</p></li></Link>
+            <li className="tab active"><p>Log In</p></li>
+          </ul>
+
+          <h2>Welkom terug!</h2>
+
           <fieldset>
             <label>Email</label>
-            <input type="text" name="email"
-              ref="email"
-              value={email}
-              onChange={() => this.changeHandler()}/>
+            <input type="text" name="email" ref="email" value={email} onChange={() => this.changeHandler()}/>
+
             <label>Password</label>
-            <input type="password" name="password"
-              ref="password"
-              value={password}
-              onChange={() => this.changeHandler()}/>
+            <input type="password" name="password" ref="password" value={password} onChange={() => this.changeHandler()}/>
+
             <div className='error'>{error}</div>
+
             <button type="submit">Log In</button>
           </fieldset>
-
-          <h3><Link to="/register">Nog geen account?</Link></h3>
 
         </form>
       </section>
