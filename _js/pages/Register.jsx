@@ -93,8 +93,8 @@ export default class Register extends Component {
         <form className="register-form" action="" method="post" acceptCharset="utf-8" onSubmit={e => this.submitHandler(e)}>
 
           <ul className="tab-group">
-            <li className="tab active"><p>Sign Up</p></li>
-            <Link to="/login"><li className="tab"><p>Log In</p></li></Link>
+            <li className="tab active"><p>REGISTREER</p></li>
+            <Link to="/login"><li className="tab"><p>LOG IN</p></li></Link>
           </ul>
 
           <h2>Begin hier!</h2>

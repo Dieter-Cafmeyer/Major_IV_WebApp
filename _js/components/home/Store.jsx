@@ -2,6 +2,7 @@
 
 import React, {Component} from 'react';
 import {basename} from '../../globals';
+import {Link} from 'react-router';
 
 export default class Store extends Component {
   constructor(props, context){
@@ -9,10 +10,14 @@ export default class Store extends Component {
   }
 
   render(){
-    let {logo, color} = this.props;
+    let {id, logo, color} = this.props;
 
     return (
-      <article className={`shop-item ${color}`}><img src={`${basename}${logo}`} /></article>
+      <Link to={`/shop/${id}`} className={`shopdetail ${color}`}>
+        <article>
+          <img src={`${basename}${logo}`} className="shopimg"/>
+        </article>
+      </Link>
     );
   }
 }

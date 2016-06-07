@@ -39,7 +39,7 @@ export default class Home extends Component{
           <div className="info">
             <h1>Hoogstraat Schiedam,<br/> ‘s werelds grootste kleerkast</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut enim ornare, pharetra ipsum quis, aliquet tortor. Donec ut dictum sapien. Integer aliquet felis at viverra iaculis.</p>
-            <Link to="/kaart"><button>Kaart</button></Link>
+            <Link to="/kaart"><button className="btn-black">Kaart</button></Link>
           </div>
 
           <Beoordeling/>

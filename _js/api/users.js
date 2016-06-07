@@ -17,6 +17,14 @@ export const insert = data => {
 
 };
 
+export const selectByUserId = id => {
+
+  let headers = new Headers({'x-auth-token': token.get()});
+
+  return fetch(`${base}/${id}`, {headers})
+    .then(checkStatus);
+};
+
 export const selectAll = () => {
 
   let headers = new Headers({'x-auth-token': token.get()});
@@ -28,5 +36,6 @@ export const selectAll = () => {
 
 export default {
   insert,
+  selectByUserId,
   selectAll
 };

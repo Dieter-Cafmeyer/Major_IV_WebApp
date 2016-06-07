@@ -6,7 +6,7 @@ import {Router, Route, IndexRedirect, useRouterHistory}
 import {createHistory} from 'history';
 //import {renderRole} from '../util/renderRole';
 
-import {App, Home, Login, Register, Admin, Kaart} from '../pages/';
+import {App, Home, Login, Register, Admin, Kaart, ShopDetail, ProductDetail} from '../pages/';
 import {basename} from '../globals/';
 
 import token from '../auth/token';
@@ -46,7 +46,9 @@ export default () => {
         <Route path="home" component={Home} onEnter={isLoggedIn}/>
         <Route path="login" component={Login}/>
         <Route path="register" component={Register}/>
+        <Route path="product/:id" component={ProductDetail} onEnter={isLoggedIn}/>
         <Route path="kaart" component={Kaart} onEnter={isLoggedIn}/>
+        <Route path="shop/:id" component={ShopDetail} onEnter={isLoggedIn}/>
         <Route path="register" component={Register}/>
         <Route path="admin" component={Admin} onEnter={isAdmin}/>
         <Route path="logout" onEnter={logout}/>

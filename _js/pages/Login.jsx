@@ -81,8 +81,8 @@ export default class Login extends Component {
         <form className="login-form" action="" method="post" acceptCharset="utf-8" onSubmit={e => this.submitHandler(e)}>
 
           <ul className="tab-group">
-            <Link to="/register"><li className="tab"><p>Sign Up</p></li></Link>
-            <li className="tab active"><p>Log In</p></li>
+            <Link to="/register"><li className="tab"><p>REGISTREER</p></li></Link>
+            <li className="tab active"><p>LOG IN</p></li>
           </ul>
 
           <h2>Welkom terug!</h2>

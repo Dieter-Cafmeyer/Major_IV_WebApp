@@ -11,7 +11,9 @@ export default ({users}) => {
           <td className='id'>#</td>
           <td>name</td>
           <td>email</td>
+          <td>telefoon</td>
           <td>role</td>
+          <td>punten</td>
         </tr>
       </thead>
       <tbody>

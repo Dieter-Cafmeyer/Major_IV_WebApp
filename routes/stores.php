@@ -30,25 +30,15 @@ $app->get($base.'/{id}', function($request, $response, $args){
   $token = new Token();
   $token->setFromRequest($request);
 
-  if(!$token->verify()){
-    $response = $response->withStatus(401);
-    return $response;
-  }
-
-  if(!$token->hasSameUserId($args['id']) && !$token->isAdmin()){
-    $response = $response->withStatus(403);
-    return $response;
-  }
-
   $storeDAO = new StoreDAO();
-  $user = $storeDAO->selectById($args['id']);
+  $store = $storeDAO->selectById($args['id']);
 
-  if(empty($user)){
+  if(empty($store)){
     $response = $response->withStatus(400);
     return $response;
   }
 
-  $response->getBody()->write(json_encode($user));
+  $response->getBody()->write(json_encode($store));
   return $response->withHeader('Content-Type','application/json');
 
 });
