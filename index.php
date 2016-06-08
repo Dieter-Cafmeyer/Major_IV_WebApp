@@ -16,6 +16,7 @@ require_once 'routes/auth.php';
 require_once 'routes/users.php';
 require_once 'routes/stores.php';
 require_once 'routes/products.php';
+require_once 'routes/orders.php';
 
 $app->get('/{anything:.*}', function ($request, $response, $args) {
   $view = new \Slim\Views\PhpRenderer('view/');

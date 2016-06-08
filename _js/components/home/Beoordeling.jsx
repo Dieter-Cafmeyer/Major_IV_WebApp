@@ -1,6 +1,7 @@
 'use strict';
 
 import React, {Component} from 'react';
+import {basename} from '../../globals';
 
 export default class Beoordeling extends Component {
   constructor(props, context){
@@ -11,11 +12,11 @@ export default class Beoordeling extends Component {
     return (
       <div className="beoordeling">
 
-        <img src="../../assets/img/shoe1.jpg"/>
+        <img src={`${basename}/assets/img/shoe1.jpg`}/>
 
         <div className="titlebar">
           <h2>Adidas Originals Superstars</h2>
-          <h3>Korte beschrijving van het product</h3>
+          <h3>De perfecte sneakers voor hipsters!</h3>
         </div>
 
         <div className="beoordeling-btns">

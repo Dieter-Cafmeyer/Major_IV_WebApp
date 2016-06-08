@@ -3,13 +3,14 @@
 import fetch from 'isomorphic-fetch';
 import {buildBody, checkStatus} from '../util';
 import token from '../auth/token';
+import {basename} from '../globals/';
 
-let base = '/api/users';
+let base = `${basename}/api/users`;
 
 export const insert = data => {
 
   let method = 'POST';
-  let body = buildBody(data, ['username', 'password', 'email']);
+  let body = buildBody(data, ['firstname', 'username', 'password', 'email', 'phone', 'points']);
   let headers = new Headers({'Content-Type': 'application/json'});
 
   return fetch(base, {method, body, headers})

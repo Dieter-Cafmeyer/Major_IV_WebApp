@@ -15,7 +15,7 @@ export default class Store extends Component {
     return (
       <Link to={`/shop/${id}`} className={`shopdetail ${color}`}>
         <article>
-          <img src={`${basename}${logo}`} className="shopimg"/>
+          <img src={`${basename}/${logo}`} className="shopimg"/>
         </article>
       </Link>
     );

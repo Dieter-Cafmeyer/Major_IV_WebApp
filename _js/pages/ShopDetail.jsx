@@ -50,9 +50,11 @@ export default class ShopDetail extends Component {
 
     return (
       <div className="shopdetailpage">
+
         <Filter/>
 
         <div className="shopdetail-right">
+          <Link to="/home"><img src={`${basename}/assets/img/back.png`} className="backbtn"/></Link>
           <h1 className="shoptitle">{store.name}</h1>
 
           <div className="shopdetail-content">

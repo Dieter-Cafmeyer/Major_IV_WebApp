@@ -46,35 +46,6 @@ export default class Filter extends Component {
         </ul><br/><br/>
 
         <div className="filterslider"><Link to="/kaart"><button className="btn-white">TOEPASSEN</button></Link></div>
-
-        <h1 className="upperline">Winkelmandje</h1>
-
-        <div className="basket-aside">
-          <img src={`${basename}/assets/img/products/product1.png`} />
-          <div className="product-aside-info">
-            <div>
-              <h1>Artikel naam</h1>
-              <h2>Categorie</h2>
-            </div>
-            <h3>12 punten</h3>
-          </div>
-        </div>
-
-        <hr/>
-
-        <div className="basket-aside">
-          <img src={`${basename}/assets/img/products/product1.png`} />
-          <div className="product-aside-info">
-            <div>
-              <h1>Artikel naam</h1>
-              <h2>Categorie</h2>
-            </div>
-            <h3>12 punten</h3>
-          </div>
-        </div>
-
-        <div className="filterslider"><Link to="/kaart"><button className="btn-white">WINKELMAND</button></Link></div>
-
       </aside>
     );
   }

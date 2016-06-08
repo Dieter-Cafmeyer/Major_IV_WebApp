@@ -80,19 +80,14 @@ export default class Login extends Component {
       <section className="login">
         <form className="login-form" action="" method="post" acceptCharset="utf-8" onSubmit={e => this.submitHandler(e)}>
 
-          <ul className="tab-group">
-            <Link to="/register"><li className="tab"><p>REGISTREER</p></li></Link>
-            <li className="tab active"><p>LOG IN</p></li>
-          </ul>
+          <h1>Log In</h1>
 
-          <h2>Welkom terug!</h2>
+          <h2>Of <Link to="/register"><span>registreer</span></Link> een nieuw account</h2>
 
           <fieldset>
-            <label>Email</label>
-            <input type="text" name="email" ref="email" value={email} onChange={() => this.changeHandler()}/>
+            <input type="text" name="email" ref="email" placeholder="Email" value={email} onChange={() => this.changeHandler()}/>
 
-            <label>Password</label>
-            <input type="password" name="password" ref="password" value={password} onChange={() => this.changeHandler()}/>
+            <input type="password" name="password" placeholder="Wachtwoord" ref="password" value={password} onChange={() => this.changeHandler()}/>
 
             <div className='error'>{error}</div>
 

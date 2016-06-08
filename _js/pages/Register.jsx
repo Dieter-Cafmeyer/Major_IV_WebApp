@@ -22,18 +22,22 @@ export default class Register extends Component {
     this.state = {
       email: '',
       password: '',
-      username: ''
+      username: '',
+      phone: '',
+      points: ''
     };
 
   }
 
   changeHandler(){
 
-    let {email, username, password} = this.refs;
+    let {email, username, password, phone, points} = this.refs;
 
     this.setState({
       email: email.value,
       username: username.value,
+      phone: phone.value,
+      points: points.value,
       password: password.value
     });
 
@@ -41,20 +45,29 @@ export default class Register extends Component {
 
   validate(){
 
-    let {email, password, username} = this.state;
+    let {email, password, username, phone, points} = this.state;
 
     let errors = {};
 
     if(!email){
-      errors.email = 'please enter the email';
+      errors.email = 'Vul een email adres is';
     }
 
-    if(!password){
-      errors.password = 'please enter the password';
+
+    if(!points){
+      errors.points = 'Kies een abonnement';
     }
 
     if(!username){
-      errors.username = 'please enter the username';
+      errors.username = 'Vul uw naam in';
+    }
+
+    if(!password){
+      errors.password = 'Geef uw wachtwoord nummer op';
+    }
+
+    if(!phone){
+      errors.name = 'Geef uw telefoon nummer op';
     }
 
     return errors;
@@ -68,7 +81,6 @@ export default class Register extends Component {
     let errors = this.validate();
 
     if(isEmpty(errors)){
-
       insert(this.state)
         .then(() => login(this.state))
         .then(t => token.set(t))
@@ -85,43 +97,40 @@ export default class Register extends Component {
 
   render() {
 
-    let {username, email, password, errors={}} = this.state;
+    let {username, phone, email, password, points, errors={}} = this.state;
 
     return (
       <section className="register">
 
         <form className="register-form" action="" method="post" acceptCharset="utf-8" onSubmit={e => this.submitHandler(e)}>
-
-          <ul className="tab-group">
-            <li className="tab active"><p>REGISTREER</p></li>
-            <Link to="/login"><li className="tab"><p>LOG IN</p></li></Link>
-          </ul>
-
-          <h2>Begin hier!</h2>
-
+          <h1>Registreer een nieuw account</h1>
+          <h2>Hebt u al een <Link to="/login"><span>account</span></Link>?</h2>
           <fieldset>
-            <label>Gebruiker</label>
-            <input type="text" name="username"
-              ref="username"
-              value={username}
-              onChange={() => this.changeHandler()}
-              className={errors.username ? 'error' : ''}/>
-            <label>Email</label>
-            <input type="text" name="email"
-              ref="email"
-              value={email}
-              onChange={() => this.changeHandler()}
-              className={errors.email ? 'error' : ''}/>
-            <label>Paswoord</label>
-            <input type="password" name="password"
-              ref="password"
-              value={password}
-              onChange={() => this.changeHandler()}
-              className={errors.password ? 'error' : ''}/>
-              <br/>
+            <div className="register-content">
+
+              <div>
+                <input type="text" name="email" tabIndex="1" placeholder="Email" ref="email" value={email}
+                  onChange={() => this.changeHandler()} className={errors.email ? 'error' : ''}/>
+                <input type="password" name="password" tabIndex="3" placeholder="Wachtwoord" ref="password" value={password}
+                  onChange={() => this.changeHandler()} className={errors.password ? 'error' : ''}/>
+              </div>
+
+              <div>
+                <input type="text" name="name" tabIndex="2" placeholder="Naam" ref="username" value={username}
+                  onChange={() => this.changeHandler()} className={errors.username ? 'error' : ''}/>
+                <input type="text" name="phone" tabIndex="4" placeholder="Telefoon" ref="phone" value={phone}
+                  onChange={() => this.changeHandler()} className={errors.phone ? 'error' : ''}/>
+              </div>
+            </div>
+
+            <select name="points" ref="points" value={points} onChange={() => this.changeHandler()} className={errors.points ? 'error' : ''}>
+              <option value="50">€25 - 50punten</option>
+              <option value="200">€65 - 200</option>
+              <option value="500">€150 - 500punten</option>
+            </select>
+
             <button type="submit" className="btn">Registreer</button>
           </fieldset>
-
         </form>
 
       </section>

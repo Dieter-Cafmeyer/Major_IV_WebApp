@@ -7,4 +7,5 @@ export Register from './Register';
 export Admin from './Admin';
 export ShopDetail from './ShopDetail';
 export Kaart from './Kaart';
+export Winkelmand from './Winkelmand';
 export ProductDetail from './ProductDetail';

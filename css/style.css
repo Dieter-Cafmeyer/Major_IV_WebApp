@@ -76,7 +76,7 @@ body {
   font-family: 'Lato', Helvetica, sans-serif;
 }
 
-.btn-white, .btn-black {
+.btn-white, .btn-black, .btn-green {
   background: none;
   border: #888 2px solid;
   padding: 9px 30px;
@@ -88,8 +88,8 @@ body {
   margin-bottom: 20px;
 }
 
-.btn-white:hover, .btn-black:hover {
-  background-color: #888;
+.btn-white:hover, .btn-black:hover, .btn-green:hover {
+  background-color: #18c6ce;
   color: white;
   transition: all .3s;
 }
@@ -99,8 +99,12 @@ body {
   border: white 2px solid;
 }
 
-.btn-black:hover {
-  background-color: #17e3ec;
+.btn-green {
+  background-color: #84e27d;
+}
+
+.btn-green:hover {
+  background-color: #75ce6e;
 }
 
 .navigation {
@@ -111,6 +115,34 @@ body {
   background-color: white;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+
+.navigation div {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.navigation div a {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  color: black;
+}
+
+.navigation div a p {
+  padding-left: 10px;
+  width: 150px;
+}
+
+.navigation div a p:hover {
+  color: #17e3ec;
 }
 
 iframe {
@@ -176,60 +208,88 @@ input.error {
 }
 
 .login, .register {
-  background-image: url("/assets/img/bg.jpg");
-  background-repeat: no-repeat;
-  background-size: 1500px;
-  height: 90vh;
+  background-color: #18c6ce;
+  height: 87vh;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
       align-items: center;
 }
 
+.login h1, .register h1 {
+  padding: 20px 30px;
+  border-bottom: 1px solid #EEE;
+}
+
 .login h2, .register h2 {
-  font-size: 1.3em;
-  text-align: center;
-  color: white;
+  color: gray;
+  padding: 20px 30px;
+}
+
+.login h2 span, .register h2 span {
+  color: #18c6ce;
+}
+
+.login h3, .register h3 {
+  color: gray;
+  padding: 20px 30px;
 }
 
 .login-form, .register-form {
-  width: 300px;
+  width: 370px;
   margin: 0 auto;
-  background-color: #13232f;
-  border-radius: 4px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #EEE;
 }
 
 fieldset {
   width: 100%;
   padding: 30px;
   padding-top: 0;
+  color: white;
   display: -ms-flexbox;
   display: flex;
-  color: white;
   -ms-flex-direction: column;
       flex-direction: column;
 }
 
-fieldset label {
-  padding: 10px 0;
-}
-
-fieldset input {
+fieldset input, fieldset select {
   font-size: 1rem;
+  border-radius: 5px;
+  margin-bottom: 20px;
   width: 100%;
   padding-left: 5px;
   height: 35px;
   background: none;
   border: 1px solid #EEE;
-  color: white;
+  color: gray;
   transition: border-color .25s ease, box-shadow .25s ease;
 }
 
-fieldset input:focus {
+fieldset input:focus, fieldset select:focus {
   border-color: #17e3ec;
 }
 
+.register-form {
+  width: 570px;
+}
+
+.register-content {
+  margin-top: 20px;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+
+.register-content div {
+  width: 48%;
+}
+
 button[type="submit"] {
+  border-radius: 5px;
   border: none;
   width: 100%;
   cursor: pointer;
@@ -244,38 +304,6 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background: #f31278;
-}
-
-.tab-group {
-  list-style: none;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-}
-
-.tab {
-  height: 50px;
-  margin-bottom: 20px;
-  width: 150px;
-  background-color: #17e3ec;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center;
-}
-
-.tab:hover {
-  background-color: #f31278;
-}
-
-.tab p {
-  color: white;
-}
-
-.active {
-  background-color: #18c6ce;
 }
 
 .navigation-item {
@@ -551,7 +579,7 @@ button[type="submit"]:hover {
 }
 
 aside {
-  width: 25%;
+  width: 300px;
   border-right: 1px solid #EEE;
   border-bottom: 1px solid #EEE;
 }
@@ -677,8 +705,14 @@ input[type=range]:focus {
   display: flex;
   -ms-flex-pack: justify;
       justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
   width: 80%;
   margin: 10px auto;
+}
+
+.basket-aside img {
+  width: 40%;
 }
 
 .basket-aside h1 {
@@ -725,8 +759,7 @@ input[type=range]:focus {
 }
 
 .shopdetail-right {
-  width: 75%;
-  margin: 0 40px;
+  width: 80%;
 }
 
 .shopdetail-content {
@@ -813,7 +846,7 @@ input[type=range]:focus {
 
 .productoverview {
   background-color: #8dd8f7;
-  width: 75%;
+  width: 80%;
 }
 
 .producttitle {
@@ -832,6 +865,8 @@ input[type=range]:focus {
   display: flex;
   -ms-flex-pack: justify;
       justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .beschrijving {
@@ -900,6 +935,29 @@ input[type=range]:focus {
   margin-bottom: 30px;
 }
 
+.backbtn, .backproductbtn {
+  width: 150px;
+  background-image: url("/assets/svg/back.svg");
+}
+
+.backbtn:hover, .backproductbtn:hover {
+  background-image: url("/assets/svg/backhover.svg");
+}
+
+.backproductbtn {
+  background-image: url("/assets/svg/backhover.svg");
+}
+
+.backproductbtn:hover {
+  background-image: url("/assets/svg/backhover2.svg");
+}
+
+.winkelmand {
+  width: 95%;
+  padding-top: 20px;
+  margin: 0 auto;
+}
+
 @media only screen and (max-width: 1200px) {
   .home {
     padding: 3%;
@@ -935,6 +993,26 @@ input[type=range]:focus {
   }
 }
 
+@media only screen and (max-width: 1000px) {
+  .shopdetail-content article {
+    width: 45%;
+  }
+  .productoverview {
+    width: 70%;
+  }
+  .beschrijving {
+    width: 100%;
+  }
+  .details {
+    margin-top: 20px;
+    width: 50%;
+  }
+  .productcontent {
+    -ms-flex-pack: center;
+        justify-content: center;
+  }
+}
+
 @media only screen and (max-width: 900px) {
   .info {
     width: 100%;
@@ -947,6 +1025,16 @@ input[type=range]:focus {
   }
 }
 
+@media only screen and (max-width: 800px) {
+  .shopdetail-content article {
+    margin: 20px auto;
+    width: 60%;
+  }
+  .productoverview {
+    width: 65%;
+  }
+}
+
 @media only screen and (max-width: 700px) {
   .beoordeling {
     width: 45%;
@@ -954,6 +1042,43 @@ input[type=range]:focus {
   .shopdetail {
     margin-bottom: 20px;
     width: 48%;
+  }
+  .details {
+    width: 90%;
+  }
+  .bm-burger-button {
+    left: 10px;
+  }
+  .logo {
+    margin-left: 10px;
+  }
+  .navigatie div {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    width: 100px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  aside {
+    display: none;
+  }
+  .shopdetail-right {
+    width: 100%;
+  }
+  .shopdetail-content {
+    padding: 0;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .shopdetail-content article {
+    width: 45%;
+  }
+  .productoverview {
+    width: 100%;
+  }
+  .register-form {
+    width: 90%;
   }
 }
 
@@ -963,6 +1088,12 @@ input[type=range]:focus {
   }
   .info p {
     font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .logo {
+    margin-right: -20px;
   }
 }
 
@@ -976,5 +1107,28 @@ input[type=range]:focus {
   }
   .shopdetail {
     width: 100%;
+  }
+  .shopdetail-content {
+    -ms-flex-pack: center;
+        justify-content: center;
+  }
+  .shopdetail-content article {
+    width: 60%;
+  }
+  .profile-picture {
+    display: none;
+  }
+  .login-form {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .shopdetail-content {
+    -ms-flex-pack: center;
+        justify-content: center;
+  }
+  .shopdetail-content article {
+    width: 80%;
   }
 }

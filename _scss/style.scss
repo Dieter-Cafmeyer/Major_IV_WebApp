@@ -2,16 +2,18 @@
 @import "mixins";
 
 $blue: #17e3ec;
+$backgroundblue: #18c6ce;
 $bluedarker: #18c6ce;
 $pink: #f31278;
 $yellow: #fef087;
 $gray-light: #EEE;
+$light-border: 1px solid #EEE;
 
 body {
   font-family: 'Lato', Helvetica, sans-serif;
 }
 
-.btn-white, .btn-black {
+.btn-white, .btn-black, .btn-green {
   background: none;
   border: #888 2px solid;
   padding: 9px 30px;
@@ -22,7 +24,7 @@ body {
   transition: all .3s;
   margin-bottom: 20px;
   &:hover {
-    background-color: #888;
+    background-color: $bluedarker;
     color: white;
     transition: all .3s;
   }
@@ -31,8 +33,13 @@ body {
 .btn-black {
   color: white;
   border: white 2px solid;
+}
+
+.btn-green {
+  background-color: #84e27d;
+
   &:hover {
-    background-color: $blue;
+    background-color: #75ce6e;
   }
 }
 
@@ -43,6 +50,25 @@ body {
   height: 100px;
   background-color: white;
   display: flex;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    a {
+      display: flex;
+      align-items: center;
+      color: black;
+      p {
+        padding-left: 10px;
+        width: 150px;
+      }
+      p:hover {
+        color: $blue;
+      }
+    }
+  }
 }
 
 iframe {
@@ -110,47 +136,56 @@ input.error {
 // LOGIN FORM
 
 .login, .register {
-  background-image: url('/assets/img/bg.jpg');
-  background-repeat: no-repeat;
-  background-size: 1500px;
-  height: 90vh;
+  background-color: $backgroundblue;
+  height: 87vh;
   display: flex;
   align-items: center;
 
+  h1 {
+    padding: 20px 30px;
+    border-bottom: $light-border;
+  }
+
   h2 {
-    font-size: 1.3em;
-    text-align: center;
-    color: white;
+    color: gray;
+    padding: 20px 30px;
+    span {
+      color: $backgroundblue;
+    }
+  }
+
+  h3 {
+    color: gray;
+    padding: 20px 30px;
   }
 }
 
 .login-form, .register-form {
-  width: 300px;
+  width: 370px;
   @include center;
-  background-color: #13232f;
-  border-radius: 4px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: $light-border;
 }
 
 fieldset {
   width: 100%;
   padding: 30px;
   padding-top: 0;
-  display: flex;
   color: white;
+  display: flex;
   flex-direction: column;
 
-  label {
-    padding: 10px 0;
-  }
-
-  input {
+  input, select {
     font-size: 1rem;
+    border-radius: 5px;
+    margin-bottom: 20px;
     width: 100%;
     padding-left: 5px;
     height: 35px;
     background:none;
-    border:1px solid $gray-light;
-    color: white;
+    border: $light-border;
+    color: gray;
     transition:border-color .25s ease, box-shadow .25s ease;
     &:focus {
       border-color: $blue;
@@ -158,7 +193,23 @@ fieldset {
   }
 }
 
+.register-form {
+  width: 570px;
+}
+
+.register-content {
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  div {
+    width: 48%;
+  }
+}
+
 button[type="submit"] {
+  border-radius: 5px;
   border: none;
   width: 100%;
   cursor: pointer;
@@ -174,34 +225,6 @@ button[type="submit"] {
     background:$pink;
   }
 }
-
-
-.tab-group {
-  list-style:none;
-  display: flex;
-  width: 100%;
-}
-
-.tab {
-  height: 50px;
-  margin-bottom: 20px;
-  width: 150px;
-  background-color: $blue;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  &:hover {
-    background-color: $pink;
-  }
-  p {
-    color: white;
-  }
-}
-
-.active {
-  background-color: $bluedarker;
-}
-
 
 //NAVIGATION
 
@@ -452,7 +475,7 @@ button[type="submit"] {
 }
 
 aside {
-  width: 25%;
+  width: 300px;
   border-right: 1px solid #EEE;
   border-bottom: 1px solid #EEE;
 
@@ -567,8 +590,13 @@ input[type=range]:focus {
 .basket-aside {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 80%;
   margin: 10px auto;
+  img {
+    width: 40%;
+  }
+
   h1 {
     text-align: left;
     font-size: 1.2em;
@@ -607,8 +635,7 @@ input[type=range]:focus {
 }
 
 .shopdetail-right {
-  width: 75%;
-  margin: 0 40px;
+  width: 80%;
 }
 
 .shopdetail-content {
@@ -682,7 +709,7 @@ input[type=range]:focus {
 
 .productoverview {
   background-color: #8dd8f7;
-  width: 75%;
+  width: 80%;
 }
 
 .producttitle {
@@ -701,6 +728,7 @@ input[type=range]:focus {
   background-color: white;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .beschrijving {
@@ -765,5 +793,25 @@ input[type=range]:focus {
   }
 }
 
+.backbtn, .backproductbtn {
+  width: 150px;
+  background-image: url('/assets/svg/back.svg');
+  &:hover{
+    background-image: url('/assets/svg/backhover.svg');
+  }
+}
+
+.backproductbtn {
+  background-image: url('/assets/svg/backhover.svg');
+  &:hover{
+    background-image: url('/assets/svg/backhover2.svg');
+  }
+}
+
+.winkelmand {
+  width: 95%;
+  padding-top: 20px;
+  margin: 0 auto;
+}
 
 @import "responsive";

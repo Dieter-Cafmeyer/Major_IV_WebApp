@@ -16,7 +16,7 @@ export default class Navigation extends Component{
     super(props, context);
     this.state = {
       user: []
-    }
+    };
   }
   setActive(name){
     let {pathname} = this.props;
@@ -58,6 +58,7 @@ export default class Navigation extends Component{
           </div>
           <Link className="navigation-item" id="homeNav" to="/home"><li><p>Home</p></li></Link>
           <Link className="navigation-item kaartNav" to="/kaart"><li>Kaart</li></Link>
+          <Link className="navigation-item kaartNav" to="/basket"><li>Winkelwagen</li></Link>
           {this.renderAdminLink()}
 
         </ul>

@@ -38,7 +38,7 @@ export default class Home extends Component{
         <div className="home-pt1">
           <div className="info">
             <h1>Hoogstraat Schiedam,<br/> ‘s werelds grootste kleerkast</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut enim ornare, pharetra ipsum quis, aliquet tortor. Donec ut dictum sapien. Integer aliquet felis at viverra iaculis.</p>
+            <p>"Lenen is het nieuwe kopen". Dat is wat we met de Hoogstraat willen bereiken. Niemand hoeft nog een paar schoenen te kopen om ze dan slechts één keer te gebruiken. Huur ze gewoon voor een maand!</p>
             <Link to="/kaart"><button className="btn-black">Kaart</button></Link>
           </div>
 

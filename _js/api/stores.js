@@ -1,8 +1,6 @@
 'use strict';
-
-//isomorphic kan je ook gebruiken op de server
 import fetch from 'isomorphic-fetch';
-import {buildBody, checkStatus} from '../util';
+import {checkStatus} from '../util';
 import token from '../auth/token';
 import {basename} from '../globals/';
 

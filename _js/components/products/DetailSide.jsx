@@ -16,13 +16,13 @@ export default class DetailSide extends Component {
         <h1>Suggesties</h1>
 
         <div className="basket-aside">
-          <img src={`${basename}/assets/img/products/product1.png`} />
+          <img src={`${basename}/assets/img/products/adidas/product2.png`} />
           <div className="product-aside-info">
             <div>
-              <h1>Artikel naam</h1>
-              <h2>Categorie</h2>
+              <h1>Adidas OriginalsVeritas</h1>
+              <h2>Schoenen</h2>
             </div>
-            <h3>12 punten</h3>
+            <h3>15 punten</h3>
             <Link to="/product"><button className="btn-white">RESERVEER</button></Link>
           </div>
         </div>
@@ -30,13 +30,13 @@ export default class DetailSide extends Component {
         <hr/>
 
         <div className="basket-aside">
-          <img src={`${basename}/assets/img/products/product1.png`} />
+          <img src={`${basename}/assets/img/products/nike/product1.png`} />
           <div className="product-aside-info">
             <div>
-              <h1>Artikel naam</h1>
-              <h2>Categorie</h2>
+              <h1>Nike Sweatvest</h1>
+              <h2>Sweatvest</h2>
             </div>
-            <h3>12 punten</h3>
+            <h3>8 punten</h3>
             <Link to="/product"><button className="btn-white">RESERVEER</button></Link>
           </div>
         </div>
