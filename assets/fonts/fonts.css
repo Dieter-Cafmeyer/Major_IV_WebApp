@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'pier';
+  src: url('./pier.woff2') format('woff2'),
+       url('./pier.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

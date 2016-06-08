@@ -1,0 +1,201 @@
+@media only screen and (max-width: 1200px){
+  .home {
+    padding: 3%;
+  }
+
+  .home-pt1 {
+    flex-wrap: wrap;
+  }
+
+  .info {
+    h1 {
+      width: 95%;
+    }
+    p {
+      width: 95%;
+    }
+  }
+
+  .beoordeling-btns {
+    height: 100px;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+
+    div {
+      width: 75%;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .beoordeling-btn {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 1000px){
+  .shopdetail-content {
+    article {
+      width: 45%;
+    }
+  }
+
+  .productoverview {
+    width: 70%;
+  }
+
+  .beschrijving {
+    width: 100%;
+  }
+
+  .details {
+    margin-top: 20px;
+    width: 50%;
+  }
+
+  .productcontent {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 900px){
+  .info {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .beoordeling {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 30%;
+  }
+
+}
+
+@media only screen and (max-width: 800px){
+  .shopdetail-content {
+    article {
+      margin: 20px auto;
+      width: 60%;
+    }
+  }
+
+  .productoverview {
+    width: 65%;
+  }
+}
+
+@media only screen and (max-width: 700px){
+  .beoordeling {
+    width: 45%;
+  }
+
+  .shopdetail {
+    margin-bottom: 20px;
+    width: 48%;
+  }
+
+  .details {
+    width: 90%;
+  }
+
+  .bm-burger-button {
+    left: 10px;
+  }
+
+  .logo {
+    margin-left: 10px;
+  }
+
+  .navigatie {
+    div {
+      flex-direction: column;
+      width: 100px;
+    }
+  }
+}
+
+@media only screen and (max-width: 650px){
+  aside {
+    display: none;
+  }
+
+  .shopdetail-right {
+    width: 100%;
+  }
+
+  .shopdetail-content {
+    padding: 0;
+    width: 90%;
+    margin: 0 auto;
+    article {
+      width: 45%;
+    }
+  }
+
+  .productoverview {
+    width: 100%;
+  }
+
+  .register-form {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .info {
+    h1 {
+      font-size: 1.8em;
+    }
+    p {
+      font-size: 1em;
+    }
+  }
+}
+
+@media only screen and (max-width: 550px){
+  .logo {
+    margin-right: -20px;
+  }
+}
+
+@media only screen and (max-width: 500px){
+  .bm-menu-wrap {
+    width: 100% !important;
+  }
+
+  .beoordeling {
+    width: 100%;
+    height: auto;
+  }
+
+  .shopdetail {
+    width: 100%;
+  }
+
+  .shopdetail-content {
+    justify-content: center;
+    article {
+      width: 60%;
+    }
+  }
+
+  .profile-picture{
+    display: none;
+  }
+
+  .login-form {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 400px){
+  .shopdetail-content {
+    justify-content: center;
+    article {
+      width: 80%;
+    }
+  }
+}
