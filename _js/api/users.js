@@ -18,6 +18,15 @@ export const insert = data => {
 
 };
 
+export const update = data => {
+  let method = 'PUT';
+  let body = buildBody(data, ['id', 'points']);
+  let headers = new Headers({'Content-Type': 'application/json'});
+
+  return fetch(base, {method, body, headers})
+    .then(checkStatus);
+};
+
 export const selectByUserId = id => {
 
   let headers = new Headers({'x-auth-token': token.get()});
@@ -38,5 +47,6 @@ export const selectAll = () => {
 export default {
   insert,
   selectByUserId,
-  selectAll
+  selectAll,
+  update
 };

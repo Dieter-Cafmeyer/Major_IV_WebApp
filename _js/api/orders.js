@@ -24,9 +24,7 @@ export const selectByUserId = id => {
     .then(checkStatus);
 };
 
-export const selectAllOrders = () => {
-  let id = 1;
-
+export const selectAllOrders = id => {
   return fetch(`${base}?basket=${id}`)
     .then(checkStatus);
 };
@@ -40,9 +38,18 @@ export const insert = data => {
     .then(checkStatus);
 };
 
+export const remove = id => {
+  let method = 'DELETE';
+  let headers = new Headers({'x-auth-token': token.get()});
+
+  return fetch(`${base}/${id}`, {method, headers})
+    .then(checkStatus);
+};
+
 export default {
   selectByProductId,
   selectByUserId,
   selectAllOrders,
-  insert
+  insert,
+  remove
 };

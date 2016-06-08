@@ -16,6 +16,7 @@ export default class App extends Component {
   }
 
   renderNavigation(){
+
     let {pathname} = this.props.location;
 
     if(pathname === '/login') return '';
@@ -36,9 +37,6 @@ export default class App extends Component {
 
     if(pathname === '/login') return '';
     if(pathname === '/register') return '';
-
-    let {role} = token.content().user;
-    let isOpen = false;
     return (
       <div>
         <Link to="/basket"><img src={`${basename}/assets/svg/winkelmand.svg`} width="20"/>

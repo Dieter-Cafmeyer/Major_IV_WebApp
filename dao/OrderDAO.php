@@ -12,9 +12,10 @@ class OrderDAO extends DAO {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  public function selectBasket(){
-    $sql = "SELECT store_id, name, description, price, image, tags, logo, `sdam_products`.id FROM `sdam_products` INNER JOIN `sdam_orders` ON `sdam_products`.id = `sdam_orders`.product_id";
+  public function selectBasket($id){
+    $sql = "SELECT store_id, name, description, price, image, tags, logo, `sdam_orders`.id FROM `sdam_products` INNER JOIN `sdam_orders` ON `sdam_products`.id = `sdam_orders`.product_id WHERE `sdam_orders`.user_id = :id";
     $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':id', $id);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
@@ -54,6 +55,13 @@ class OrderDAO extends DAO {
     $stmt->bindValue(':productid', $productid);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function delete($id) {
+    $sql = "DELETE FROM `sdam_orders` WHERE `id` = :id";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindValue(':id', $id);
+    return $stmt->execute();
   }
 
   public function insert($data) {

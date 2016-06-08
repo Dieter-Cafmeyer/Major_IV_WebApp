@@ -1,8 +1,5 @@
 'use strict';
-
 import React, {Component} from 'react';
-import {basename} from '../../globals';
-
 import {Link} from 'react-router';
 
 export default class Filter extends Component {

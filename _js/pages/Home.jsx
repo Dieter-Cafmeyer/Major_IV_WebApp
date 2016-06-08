@@ -1,8 +1,5 @@
 'use strict';
-
 import React, {Component} from 'react';
-//import token from '../auth/token';
-//import renderRole from '../util/renderRole';
 import {Link} from 'react-router';
 import {selectAllStores} from '../api/stores';
 
@@ -11,6 +8,7 @@ import {Beoordeling, Store} from '../components/home/';
 export default class Home extends Component{
   constructor(props, context){
     super(props, context);
+    window.scrollBy(0, -10000);
     this.state = {
       stores: []
     };
@@ -23,7 +21,6 @@ export default class Home extends Component{
     });
   }
 
-
   renderStores() {
     return this.state.stores.map(store => {
       return <Store {...store} key={store.id}/>;
@@ -32,7 +29,6 @@ export default class Home extends Component{
 
   render(){
     return (
-
       <section className='home'>
 
         <div className="home-pt1">

@@ -30,6 +30,7 @@ export default class Navigation extends Component{
     selectByUserId(id)
       .then(data => {
         this.setState({user: data});
+        localStorage.setItem("points", this.state.user.points);
       })
       .catch(() => {
         console.error('failed to get store');
@@ -54,7 +55,7 @@ export default class Navigation extends Component{
           <div className="profile-info">
             <div className="profile-picture"></div>
             <h2 className="profile-name">{tokenuser.username}</h2>
-            <h2 className="profile-points"><span>{user.points}</span> punten</h2>
+            <h2 className="profile-points"><span>{localStorage.points}</span> punten</h2>
           </div>
           <Link className="navigation-item" id="homeNav" to="/home"><li><p>Home</p></li></Link>
           <Link className="navigation-item kaartNav" to="/kaart"><li>Kaart</li></Link>

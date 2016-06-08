@@ -28,12 +28,19 @@ $app->get($base, function($request, $response, $args){
     }else if(!empty($query['userid'])){
       $data = $orderDAO->selectByUserId($query['userid']);
     }else if(!empty($query['basket'])){
-      $data= $orderDAO->selectBasket();
+      $data= $orderDAO->selectBasket($query['basket']);
     }
   }
 
   $response->getBody()->write(json_encode($data));
   return $response->withHeader('Content-Type','application/json');
+});
+
+$app->delete($base.'/{id}', function ($request, $response, $args) {
+  $orderDAO = new OrderDAO();
+  $orderDAO->delete($args['id']);
+  return $response->write(true)
+    ->withHeader('Content-Type','application/json');
 });
 
 

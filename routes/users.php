@@ -63,6 +63,19 @@ $app->get($base.'/{id}', function($request, $response, $args){
 
 });
 
+$app->put($base, function ($request, $response, $args) {
+  $userDAO = new UserDAO();
+  $user = $request->getParsedBody();
+
+  $updatedUser = $userDAO->update($user);
+  $response = $response->write(json_encode($updatedUser))
+    ->withHeader('Content-Type','application/json');
+  if(empty($updatedUser)) {
+    $response = $response->withStatus(404);
+  }
+  return $response;
+});
+
 $app->post($base, function($request, $response, $args){
 
   $userDAO = new UserDAO();

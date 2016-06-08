@@ -16,7 +16,7 @@ export default class ShopDetail extends Component {
     this.state = {
       products: []
     };
-    window.scrollBy(0, -1000);
+    window.scrollBy(0, -10000);
   }
 
   componentDidMount(){

@@ -7,6 +7,7 @@ import {selectProductsById} from '../api/products';
 import {isEmpty, filter} from 'lodash';
 import token from '../auth/token';
 import {insert, selectByUserId} from '../api/orders';
+import {update} from '../api/users';
 
 import {Link} from 'react-router';
 
@@ -21,7 +22,7 @@ export default class ProductDetail extends Component {
       product: {},
       ordered: {}
     };
-    window.scrollBy(0, -1000);
+    window.scrollBy(0, -10000);
   }
 
   componentDidMount(){
@@ -56,7 +57,17 @@ export default class ProductDetail extends Component {
 
     this.setState({ordered: product});
 
-    insert(data)
+    insert(data);
+
+    let currentPoints = parseInt(localStorage.points);
+    currentPoints -= parseInt(product[0].price);
+    localStorage.points = currentPoints;
+
+    let user = [];
+    user.id = token.content().user.id;
+    user.points = localStorage.points;
+
+    update(user);
   }
 
   renderMaten(){
