@@ -24,7 +24,8 @@ export default class Register extends Component {
       password: '',
       username: '',
       phone: '',
-      points: ''
+      points: '',
+      errors: ''
     };
 
   }
@@ -50,24 +51,19 @@ export default class Register extends Component {
     let errors = {};
 
     if(!email){
-      errors.email = 'Vul een email adres is';
-    }
-
-
-    if(!points){
-      errors.points = 'Kies een abonnement';
+      errors.email = 'vul een email adres in';
     }
 
     if(!username){
-      errors.username = 'Vul uw naam in';
+      errors.username = 'vul uw naam in';
     }
 
     if(!password){
-      errors.password = 'Geef uw wachtwoord nummer op';
+      errors.password = 'kies uw wachtwoord';
     }
 
     if(!phone){
-      errors.name = 'Geef uw telefoon nummer op';
+      errors.phone = 'vul uw telefoon nummer in';
     }
 
     return errors;
@@ -86,7 +82,12 @@ export default class Register extends Component {
         .then(t => token.set(t))
         .then(() => {
           this.context.router.push('/home');
+        })
+        .catch(() => {
+          errors.emailused = "email adres reeds in gebruik";
+          this.setState({errors, password: ''});
         });
+
 
     }else{
       //errors op het scherm plaatsen
@@ -99,6 +100,8 @@ export default class Register extends Component {
 
     let {username, phone, email, password, points, errors={}} = this.state;
 
+
+
     return (
       <section className="register">
 
@@ -110,16 +113,20 @@ export default class Register extends Component {
 
               <div>
                 <input type="text" name="email" tabIndex="1" placeholder="Email" ref="email" value={email}
-                  onChange={() => this.changeHandler()} className={errors.email ? 'error' : ''}/>
+                  onChange={() => this.changeHandler()} className={errors.email || errors.emailused ? 'error' : ''}/>
+                  <p className='error'>{errors.email}{errors.emailused}</p>
                 <input type="password" name="password" tabIndex="3" placeholder="Wachtwoord" ref="password" value={password}
                   onChange={() => this.changeHandler()} className={errors.password ? 'error' : ''}/>
+                  <p className='error'>{errors.password}</p>
               </div>
 
               <div>
-                <input type="text" name="name" tabIndex="2" placeholder="Naam" ref="username" value={username}
+                <input type="text" name="name" tabIndex="2" placeholder="Voornaam Naam" ref="username" value={username}
                   onChange={() => this.changeHandler()} className={errors.username ? 'error' : ''}/>
+                  <p className='error'>{errors.username}</p>
                 <input type="text" name="phone" tabIndex="4" placeholder="Telefoon" ref="phone" value={phone}
                   onChange={() => this.changeHandler()} className={errors.phone ? 'error' : ''}/>
+                  <p className='error'>{errors.phone}</p>
               </div>
             </div>
 

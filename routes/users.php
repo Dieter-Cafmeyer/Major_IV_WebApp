@@ -82,6 +82,13 @@ $app->post($base, function($request, $response, $args){
 
   $user = $request->getParsedBody();
 
+
+  $existing = $userDAO->selectByEmail($user['email']);
+  if (!empty($existing)) {
+    $response = $response->withStatus(400);
+    exit();
+  }
+
   if($user['password']){
     $user['password'] = BCrypt::hash($user['password']);
   }

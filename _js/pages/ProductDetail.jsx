@@ -47,6 +47,15 @@ export default class ProductDetail extends Component {
   addToBasket(e){
     e.preventDefault();
 
+    let currentPoints = parseInt(localStorage.points);
+
+    console.log(this.state.product.price);
+
+    if(currentPoints-this.state.product.price < 0) {
+      console.log('minder dan 0');
+      return;
+    }
+
     let data = [];
     data.productid = this.props.params.id;
     data.userid = token.content().user.id;
@@ -59,7 +68,7 @@ export default class ProductDetail extends Component {
 
     insert(data);
 
-    let currentPoints = parseInt(localStorage.points);
+
     currentPoints -= parseInt(product[0].price);
     localStorage.points = currentPoints;
 
@@ -99,7 +108,13 @@ export default class ProductDetail extends Component {
       let filteredResult = filter(this.state.ordered, o => parseInt(o.product_id) === id);
 
       if(isEmpty(filteredResult)){
+        let currentPoints = parseInt(localStorage.points);
+
+        if(currentPoints-this.state.product.price < 0) {
+          return (<div className="filterslider"><Link to="/basket"><button className="btn-red">NIET GENOEG PUNTEN</button></Link></div>);
+        }
         return (<div className="filterslider"><Link to="/product"><button className="btn-white" onClick={e => this.addToBasket(e)}>RESERVEREN</button></Link></div>);
+
       }else {
         return (<div className="filterslider"><Link to="/basket"><button className="btn-green">GERESERVEERD</button></Link></div>);
       }

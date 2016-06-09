@@ -76,7 +76,7 @@ body {
   font-family: 'Lato', Helvetica, sans-serif;
 }
 
-.btn-white, .btn-black, .btn-green {
+.btn-white, .btn-black, .btn-green, .btn-red {
   background: none;
   border: #888 2px solid;
   padding: 9px 30px;
@@ -88,7 +88,7 @@ body {
   margin-bottom: 20px;
 }
 
-.btn-white:hover, .btn-black:hover, .btn-green:hover {
+.btn-white:hover, .btn-black:hover, .btn-green:hover, .btn-red:hover {
   background-color: #18c6ce;
   color: white;
   transition: all .3s;
@@ -105,6 +105,15 @@ body {
 
 .btn-green:hover {
   background-color: #75ce6e;
+}
+
+.btn-red {
+  color: white;
+  background-color: #eb4c4c;
+}
+
+.btn-red:hover {
+  background-color: #d64646;
 }
 
 .navigation {
@@ -189,15 +198,6 @@ td {
   width: 8rem;
 }
 
-.error {
-  margin-bottom: 1rem;
-  color: red;
-}
-
-input.error {
-  border: 1px solid red;
-}
-
 .logo {
   margin-left: 60px;
 }
@@ -233,6 +233,12 @@ input.error {
 .login h3, .register h3 {
   color: gray;
   padding: 20px 30px;
+}
+
+.login p, .register p {
+  height: 20px;
+  margin-top: -17px;
+  margin-bottom: 3px;
 }
 
 .login-form, .register-form {
@@ -1054,6 +1060,18 @@ input[type=range]:focus {
 .winkelmand-under button:hover {
   transition: all .3s;
   opacity: .4;
+}
+
+.error {
+  color: red;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+input.error {
+  margin-bottom: 20px;
+  border: 1px solid red;
+  height: 35px;
 }
 
 @media only screen and (max-width: 1200px) {

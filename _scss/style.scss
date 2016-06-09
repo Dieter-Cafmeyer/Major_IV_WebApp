@@ -13,7 +13,7 @@ body {
   font-family: 'Lato', Helvetica, sans-serif;
 }
 
-.btn-white, .btn-black, .btn-green {
+.btn-white, .btn-black, .btn-green, .btn-red {
   background: none;
   border: #888 2px solid;
   padding: 9px 30px;
@@ -37,9 +37,17 @@ body {
 
 .btn-green {
   background-color: #84e27d;
-
   &:hover {
     background-color: #75ce6e;
+  }
+}
+
+.btn-red {
+  color: white;
+  background-color: #eb4c4c;
+
+  &:hover {
+    background-color: #d64646;
   }
 }
 
@@ -115,15 +123,6 @@ td {
   width: 8rem;
 }
 
-.error {
-  margin-bottom: 1rem;
-  color: red;
-}
-
-input.error {
-  border: 1px solid red;
-}
-
 .logo {
   margin-left: 60px;
 }
@@ -157,6 +156,12 @@ input.error {
   h3 {
     color: gray;
     padding: 20px 30px;
+  }
+
+  p {
+    height: 20px;
+    margin-top: -17px;
+    margin-bottom: 3px;
   }
 }
 
@@ -902,5 +907,18 @@ input[type=range]:focus {
     }
   }
 }
+
+.error {
+  color: red;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+input.error {
+  margin-bottom: 20px;
+  border: 1px solid red;
+  height: 35px;
+}
+
 
 @import "responsive";

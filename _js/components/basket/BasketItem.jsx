@@ -15,6 +15,7 @@ export default class BasketItem extends Component {
     this.props.deleteOrder(this.props.id);
 
     let currentPoints = parseInt(localStorage.points);
+
     currentPoints += parseInt(this.props.price);
     localStorage.points = currentPoints;
 

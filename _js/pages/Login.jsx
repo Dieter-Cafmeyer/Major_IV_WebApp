@@ -63,6 +63,10 @@ export default class Login extends Component {
         .then(t => token.set(t))
         .then(() => {
           this.context.router.push('/home');
+        })
+        .catch(() => {
+          let error = "verkeerde email / paswoord";
+          this.setState({error, password: ''});
         });
 
     }else{
